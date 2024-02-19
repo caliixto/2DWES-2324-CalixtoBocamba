@@ -28,7 +28,7 @@
                     <select name="vehiculos" class="form-control">
                         <?php  
                             include "../controllers/alquilar.php";
-                            MostrarModelo();
+                            MostrarModelo(); 
                         ?>
                     </select>
                     <BR><BR>
@@ -36,9 +36,13 @@
                         <input type="submit" value="Agregar a Cesta" name="agregar" class="btn btn-warning disabled" onclick="ocultarCarritoInfo(event)">
                         <input type="submit" value="Realizar Alquiler" name="alquilar" class="btn btn-warning disabled">
                         <input type="submit" value="Vaciar Cesta" name="vaciar" class="btn btn-warning disabled">
-                    </div>		
+                    </div>	
+                    <?php 
+                    include "../controllers/mostrarcarrito.php";
+                    Carro();
+                    ?>
                 </form>
-				<img id="carritoImagen" wi src="../carrito.png" alt="Carrito de Compras" onclick="mostrarCarritoInfo()">
+                <?php EliminarCarrito();?>
                 <!-- FIN DEL FORMULARIO -->
             </div>
         </div>

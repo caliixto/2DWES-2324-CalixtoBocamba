@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 function MostrarModelo(){
     include "../models/busqueda.php";                
     $array_vehiculos = Busqueda(); 

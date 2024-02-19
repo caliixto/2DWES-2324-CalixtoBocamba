@@ -1,4 +1,5 @@
-﻿<html>
+﻿<?php session_start();?>
+<html>
    
   <head>
     <meta charset="UTF-8">
@@ -22,11 +23,18 @@
 	<!-- INICIO DEL FORMULARIO -->
 	<form action="" method="post">
 	
-		<B>Bienvenido/a:</B>  <BR><BR>
-		<B>Identificador Cliente:</B>  <BR><BR>
+				<B>Bienvenido/a:<?php echo $_SESSION['nombre']." ".$_SESSION['apellido'];?></B>
+                    <BR><BR>
+                    <B>Identificador Cliente:<?php echo $_SESSION['idcliente'];?></B><BR><BR>
+                    <B>Vehiculos disponibles en este momento: <?php 
+					date_default_timezone_set('Europe/Madrid');
+					echo date("Y-m-d H:i:s") ?></B><BR><BR>
 				
 			<B>Matricula/Marca/Modelo: </B><select name="vehiculos" class="form-control">
-				
+				<?php 
+				include "../controllers/devolver.php";
+				DevolverVehiculo();  
+				?>
 			</select>
 		<BR><BR>
 		<div>
@@ -35,7 +43,7 @@
 		</div>		
 	</form>
 	<!-- FIN DEL FORMULARIO -->
-	<a href = "">Cerrar Sesion</a>
+	<a href = "../controllers/cerrar_session.php">Cerrar Sesion</a>
 	
   </body>
    
