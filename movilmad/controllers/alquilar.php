@@ -10,5 +10,10 @@ function MostrarModelo(){
    } 
 
 }
-                          
+function Alquilar(){
+    include "../models/guardarAlquiler.php";
+    if(isset($_POST['alquilar']) && !empty(isset($_SESSION['carrito']))){
+        GuardarAlquiler();
+    }
+}            
 ?> 

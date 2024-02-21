@@ -38,7 +38,9 @@
 		
 			<input type="submit" value="Volver" name="Volver" class="btn btn-warning disabled">
 		
-		</div>		
+		</div>	
+		<?php include "../controllers/volver.php";
+				Volver(); ?>	
 	</form>
 	<!-- FIN DEL FORMULARIO -->
     <a href = "../controllers/cerrar_session.php">Cerrar Sesion</a>

@@ -1,12 +1,8 @@
 <?php 
 session_start();
-function Volver(){
-    if ((isset($_POST['volver']))){
-        header("Location: ../views/movwelcome.php");
-    } 
-}
 function DevolverVehiculo(){
-    include "./mostrarcarrito.php";  
+    include "../controllers/volver.php";
+				Volver(); 
    
     $opciones = ""; // Variable para almacenar las opciones
 
@@ -18,5 +14,4 @@ function DevolverVehiculo(){
 
     echo $opciones;
 }
-Volver();
 ?>

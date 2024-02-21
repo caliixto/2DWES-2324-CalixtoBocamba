@@ -23,7 +23,7 @@
                     <B>Identificador Cliente:<?php echo $_SESSION['idcliente'];?></B><BR><BR>
                     <B>Vehiculos disponibles en este momento: <?php 
 					date_default_timezone_set('Europe/Madrid');
-					echo date("Y-m-d H:i:s") ?></B><BR><BR>
+					echo date("Y-m-d") ?></B><BR><BR>
                     <B>Matricula/Marca/Modelo:</B> 
                     <select name="vehiculos" class="form-control">
                         <?php  
@@ -33,7 +33,7 @@
                     </select>
                     <BR><BR>
                     <div>
-                        <input type="submit" value="Agregar a Cesta" name="agregar" class="btn btn-warning disabled" onclick="ocultarCarritoInfo(event)">
+                        <input type="submit" value="Agregar a Cesta" name="agregar" class="btn btn-warning disabled">
                         <input type="submit" value="Realizar Alquiler" name="alquilar" class="btn btn-warning disabled">
                         <input type="submit" value="Vaciar Cesta" name="vaciar" class="btn btn-warning disabled">
                     </div>	
@@ -41,12 +41,19 @@
                     include "../controllers/mostrarcarrito.php";
                     Carro();
                     ?>
+                    <br><br>
+                     <a href="./movwelcome.php">Volver</a>
                 </form>
-                <?php EliminarCarrito();?>
+                <?php 
+                Alquilar();
+                EliminarCarrito();
+            ?>
                 <!-- FIN DEL FORMULARIO -->
             </div>
         </div>
+        
     </div>
+   
 
 </body>
 </html>

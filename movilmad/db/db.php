@@ -1,7 +1,7 @@
 <?php
  $servername = "localhost";
  $username = "root";
- $db_password = "rootroot";
+ $db_password = "";
  $dbname = "movilmad";
 
  try {

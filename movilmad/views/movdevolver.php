@@ -33,7 +33,7 @@
 			<B>Matricula/Marca/Modelo: </B><select name="vehiculos" class="form-control">
 				<?php 
 				include "../controllers/devolver.php";
-				DevolverVehiculo();  
+				DevolverVehiculo(); 
 				?>
 			</select>
 		<BR><BR>
